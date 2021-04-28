@@ -18,7 +18,7 @@ public class Lister extends AppCompatActivity implements AdapterView.OnItemClick
 
     List<Employee> listEmp;
     ListView list;
-    ArrayAdapter<Employee> adapter;
+    static ArrayAdapter<Employee> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,7 @@ public class Lister extends AppCompatActivity implements AdapterView.OnItemClick
         reHelper = new RealmHelper();
         listEmp = new ArrayList<>();
         listEmp.addAll(reHelper.getEmployee());
-
+        list.setOnItemClickListener(this);
         adapter = new ArrayAdapter<Employee>(getApplicationContext(),android.R.layout.simple_list_item_1,listEmp);
         list.setAdapter(adapter);
 
@@ -42,7 +42,7 @@ public class Lister extends AppCompatActivity implements AdapterView.OnItemClick
         Intent i = new Intent(Lister.this,Edit.class);
         Employee e = listEmp.get(position) ;
         i.putExtra("idkk",e.id);
-        System.out.println(e.id+"-----------------------------------------------------------");
+
         startActivity(i);
 
     }

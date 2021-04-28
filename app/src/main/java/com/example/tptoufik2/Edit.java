@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import io.realm.Realm;
 
@@ -33,9 +34,16 @@ int id;
     }
 
     public void supprimerOnClick(View view) {
-        //reHelper.SupprimerEmpl();
+        reHelper.SupprimerEmpl(id);
+        Lister.adapter.notifyDataSetChanged();
+        Toast.makeText(Edit.this,"supprime bien ",Toast.LENGTH_LONG).show();
     }
 
     public void modifierOnClick(View view) {
+        String name =txtName.getText().toString();
+        float salary = Float.parseFloat(txtSalary.getText().toString());
+        reHelper.ModifierEmpl(id,name,salary);
+        Lister.adapter.notifyDataSetChanged();
+
     }
 }
