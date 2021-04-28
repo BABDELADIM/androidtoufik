@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Edit">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+
+        <EditText
+            android:id="@+id/txtName2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Name Employee"></EditText>
+
+        <EditText
+            android:id="@+id/txtSalaire2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Salary"></EditText>
+
+        <Button
+            android:id="@+id/btnModifier"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="modifierOnClick"
+            android:text="Modifier" />
+
+        <Button
+            android:id="@+id/btnSupprimer"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="supprimerOnClick"
+            android:text="Supprimer" />
+    </LinearLayout>
+
+</RelativeLayout>
